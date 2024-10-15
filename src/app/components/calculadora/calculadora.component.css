@@ -1,0 +1,17 @@
+#calculos {
+    height: 80px;
+    margin: 5%;
+    background-color: rgb(248, 249, 250);
+    border: 1px solid black;
+}
+
+#calculadora {
+    margin-top: 10%;
+    background-color: rgb(187, 187, 187);
+    padding: 10px;
+    border: 1px solid black;
+}
+
+button {
+    border: 1px solid black;
+}

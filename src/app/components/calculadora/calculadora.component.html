@@ -1,32 +1,36 @@
-<div id="calculadora">
-    <div id="calculos" class="row justify-content-center">
-        <p> {{ calculo }} </p>
-    </div>
-    <div class="row justify-content-center">
-        <button type="button" (click) = "addNum(1)" class="btn btn-light col-2">1</button>
-        <button type="button" (click) = "addNum(2)" class="btn btn-light col-2">2</button>
-        <button type="button" (click) = "addNum(3)" class="btn btn-light col-2">3</button>
-    </div>
-    
-    <div class="row justify-content-center">
-        <button type="button" (click) = "addNum(4)" class="btn btn-light col-2">4</button>
-        <button type="button" (click) = "addNum(5)" class="btn btn-light col-2">5</button>
-        <button type="button" (click) = "addNum(6)" class="btn btn-light col-2">6</button>
-    </div>
-    
-    <div class="row justify-content-center">
-        <button type="button" (click) = "addNum(7)" class="btn btn-light col-2">7</button>
-        <button type="button" (click) = "addNum(8)" class="btn btn-light col-2">8</button>
-        <button type="button" (click) = "addNum(9)" class="btn btn-light col-2">9</button>
-    </div>
-    
-    <div class="row justify-content-center">
-        <button type="button" (click) = "addNum(0)" class="btn btn-light col-2">0</button>        
-        <button type="button" class="btn btn-light col-2">+</button>
-        <button type="button" class="btn btn-light col-2">-</button>
+<div id="calculadora" class="justify-content-center container align-items-center col-4 rounded-3">
+
+    <div id="calculos" class="row d-flex justify-content-center rounded-3">
+        <p class="d-flex justify-content-end align-items-center h3">{{ [(pantalla)] }}</p>
     </div>
 
-    <div class="row justify-content-center">
-        <button type="button" class="btn btn-light col-6">=</button>
+    <div class="row justify-content-around">
+        <button type="button" (click) = 'addNum("1")' class="m-3 btn btn-light col-3">1</button>
+        <button type="button" (click) = 'addNum("2")' class="m-3 btn btn-light col-3">2</button>
+        <button type="button" (click) = 'addNum("3")' class="m-3 btn btn-light col-3">3</button>
+    </div>
+    
+    <div class="row justify-content-around">
+        <button type="button" (click) = 'addNum("4")' class="m-3 btn btn-light col-3">4</button>
+        <button type="button" (click) = 'addNum("5")' class="m-3 btn btn-light col-3">5</button>
+        <button type="button" (click) = 'addNum("6")' class="m-3 btn btn-light col-3">6</button>
+    </div>
+    
+    <div class="row justify-content-around">
+        <button type="button" (click) = 'addNum("7")' class="m-3 btn btn-light col-3">7</button>
+        <button type="button" (click) = 'addNum("8")' class="m-3 btn btn-light col-3">8</button>
+        <button type="button" (click) = 'addNum("9")' class="m-3 btn btn-light col-3">9</button>
+    </div>
+    
+    <div class="row justify-content-around">
+        <button type="button" (click) = 'addNum("0")' class="m-3 btn btn-light col-3">0</button>        
+        <button type="button" (click)='seleccionarOperador("+")' class="m-3 btn btn-secondary col-3">+</button>
+        <button type="button" (click)='seleccionarOperador("-")' class="m-3 btn btn-secondary col-3">-</button>
+    </div>
+
+    <div class="row justify-content-around">
+        <button type="button" (click)='delete()' class="m-3 btn btn-danger col-3">Borrar</button>
+        <button type="button" (click)='equal()' class="m-3 btn btn-secondary col-3">=</button>
+        <button type="button" (click)='smdelete()' class="m-3 btn btn-danger col-3">Deshacer</button>
     </div>
 </div>

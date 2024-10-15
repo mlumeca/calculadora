@@ -7,13 +7,51 @@ import { Component } from '@angular/core';
 })
 export class CalculadoraComponent {
 
-  calculo = 0;
+  resultado: number = 0;
+  num1: number = 0;
+  num2:  number = 0;
+  pantalla: string = "0";
+  oper: string = "";
 
-  addNum(e: number) { // arg0 ? e ?
-    {{this.addNum}} ;
+  addNum(arg0: string) {
+    if (this.pantalla == "0" || this.pantalla == this.resultado.toString()) {
+      this.pantalla = arg0;
+    } else {
+      this.pantalla = this.pantalla + arg0;
+    }
   }
   
-  //restar()
+  seleccionarOperador(oper: string) {
+    this.num1 = +this.pantalla;
+    this.pantalla = "";
+    this.oper = oper;
+  }
 
-  resultado = 0;
+  equal() {
+    this.num2 = +this.pantalla;
+    if (this.oper == "+") {
+      this.resultado = this.num1 + this.num2;
+      this.pantalla = this.resultado.toString();
+      this.num2 = 0;
+    } if (this.oper == "-") {
+      this.resultado = this.num1 - this.num2;
+      this.pantalla = this.resultado.toString();
+      this.num2 = 0;
+    } if (this.oper == "") {
+      this.pantalla = this.num1.toString();
+    }
+    this.num1 = 0;
+  }
+
+  delete() {
+    this.resultado = 0;
+    this.num1 = 0;
+    this.num2 = 0;
+    this.pantalla = "0";
+    this.oper = "";
+  }
+
+  smdelete() {
+    this.pantalla = this.pantalla.slice(0, -1);
+  }
 }
